@@ -544,14 +544,6 @@ This project is licensed under the MIT License.
 
 ---
 
-##  Developer
-
-**Adinath J**
-- GitHub: [@Adinath-j](https://github.com/Adinath-j)
-- Project: [KisanLogWBackend](https://github.com/Adinath-j/KisanLogWBackend)
-
----
-
 ##  Acknowledgments
 
 - Chart.js for beautiful visualizations
