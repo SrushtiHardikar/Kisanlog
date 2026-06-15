@@ -1,0 +1,206 @@
+/* 🌿 Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 🌱 Page Layout */
+body {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px; 
+}
+::-webkit-scrollbar{
+  display: none;
+}
+/* 🌾 Auth Form Container */
+.auth-container,
+.form-container {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.auth-container:hover,
+.form-container:hover {
+  transform: translateY(-3px);
+}
+
+/* 🌻 Heading */
+h2 {
+  color: #2e7d32;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* 🌿 Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: 1.8px solid #a5d6a7;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #2e7d32;
+  outline: none;
+  box-shadow: 0 0 5px rgba(46, 125, 50, 0.2);
+}
+
+/* 🔒 Password Container */
+.password-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.password-container input {
+  width: 100%;
+  padding: 12px 45px 12px 14px;
+  border: 1.8px solid #a5d6a7;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.password-container input:focus {
+  border-color: #2e7d32;
+  outline: none;
+  box-shadow: 0 0 5px rgba(46, 125, 50, 0.2);
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+  transition: color 0.2s;
+}
+
+.toggle-password:hover {
+  color: #2e7d32;
+}
+
+/* 🌼 Buttons */
+.btn,
+.form-button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn:hover,
+.form-button:hover {
+  background: #1b5e20;
+}
+
+/* 🌾 Links */
+p {
+  margin-top: 15px;
+  color: #555;
+  font-size: 14px;
+}
+
+a {
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #1b5e20;
+}
+
+/* 🌸 Input Group (Register Page Fields) */
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* 🌟 Notification Message */
+.notification {
+  display: none;
+  background: #a5d6a7;
+  color: #1b5e20;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Show notification dynamically */
+.notification.show {
+  display: block;
+}
+.auth-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px 40px;
+  z-index: 100;
+}
+/* 🌈 Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌐 Responsive Design */
+@media (max-width: 480px) {
+  .auth-container,
+  .form-container {
+    padding: 30px 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn,
+  .form-button {
+    font-size: 15px;
+  }
+}

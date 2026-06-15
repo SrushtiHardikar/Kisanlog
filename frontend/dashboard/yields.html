@@ -1,0 +1,57 @@
+<div class="section-header">
+  <h2>Yield Records</h2>
+  <button class="add-btn" onclick="toggleYieldForm()">
+    <span id="yieldFormToggle">➕</span> <span id="yieldFormText">Add Yield</span>
+  </button>
+</div>
+
+<div id="yieldForm" class="form-container" style="display: none;">
+  <h3 id="yieldFormTitle">Add New Yield</h3>
+  <div class="form-grid">
+    <input type="date" id="yieldDate" class="form-input">
+    <input type="text" id="yieldCrop" placeholder="Crop Name" class="form-input">
+    <input type="number" id="yieldQuantity" placeholder="Quantity" class="form-input" step="0.01">
+    <select id="yieldUnit" class="form-input">
+      <option value="kg">kg</option>
+      <option value="tons">tons</option>
+      <option value="bags">bags</option>
+      <option value="liters">liters</option>
+      <option value="units">units</option>
+    </select>
+    <select id="yieldSeason" class="form-input">
+      <option value="">Select Season (Optional)</option>
+      <option value="Kharif">🌧️ Kharif (Jun-Oct)</option>
+      <option value="Rabi">❄️ Rabi (Nov-Mar)</option>
+      <option value="Zaid">☀️ Zaid (Apr-May)</option>
+    </select>
+    <input type="number" id="yieldPrice" placeholder="Price per Unit (₹)" class="form-input" step="0.01">
+    <button class="submit-btn blue" onclick="handleAddYield()">
+      <span id="yieldSubmitText">Add Yield</span>
+    </button>
+  </div>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead class="blue-header">
+      <tr>
+        <th>Date</th>
+        <th>Crop</th>
+        <th>Season</th>
+        <th style="text-align: right;">Quantity</th>
+        <th style="text-align: right;">Price/Unit</th>
+        <th style="text-align: right;">Total Revenue</th>
+        <th style="text-align: center;">Actions</th>
+      </tr>
+    </thead>
+    <tbody id="yieldsTableBody">
+      <tr>
+        <td colspan="7" style="text-align: center; color: #999; padding: 40px;">
+          No yield records yet
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script src="../assets/js/yields.js"></script>

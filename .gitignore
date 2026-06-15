@@ -1,0 +1,14 @@
+# env files
+.env
+backend/.env
+frontend/.env
+
+# node
+node_modules/
+backend/node_modules/
+
+# logs
+*.log
+
+#python
+backend/python

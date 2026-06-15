@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | KisanLog</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- Chart and PDF libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>KisanLog - Farm Expense Tracker</h1>
+        <p id="welcomeText"></p>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn secondary" onclick="goHome()">🏠 Home</button>
+        <button class="btn secondary" onclick="logoutUser()">🚪 Logout</button>
+        <button class="btn secondary" onclick="exportToCSV()">📥 Export Report</button>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card expenses">
+        <div class="stat-label" style="color:#c62828;">Total Expenses</div>
+        <div class="stat-value" style="color:#b71c1c;" id="totalExpenses">₹0.00</div>
+      </div>
+      <div class="stat-card revenue">
+        <div class="stat-label" style="color:#1565c0;">Total Revenue</div>
+        <div class="stat-value" style="color:#0d47a1;" id="totalRevenue">₹0.00</div>
+      </div>
+      <div class="stat-card profit" id="profitCard">
+        <div class="stat-label" id="profitLabel">Net Profit</div>
+        <div class="stat-value" id="netProfit">₹0.00</div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab" data-tab="analysis.html">Analysis</button>
+      <button class="tab active" data-tab="expenses.html">Expenses</button>
+      <button class="tab" data-tab="yields.html">Yields</button>
+      <button class="tab" data-tab="graphs.html">Graphs</button>
+    </div>
+
+    <div id="tabContent" class="tab-content"></div>
+  </div>
+
+  <!-- ✅ load shared.js first so SharedStorage is defined globally -->
+  <script src="../assets/js/shared.js"></script>
+
+  <!-- ✅ then your functional modules -->
+  <script src="../assets/js/expenses.js"></script>
+  <script src="../assets/js/yields.js"></script>
+  <script src="../assets/js/graphs.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+  <!-- ✅ finally, dashboard session + utility logic -->
+  <!-- ✅ final version of goHome() -->
+  <script>
+    // ✅ Define functions immediately (outside DOMContentLoaded) so buttons work instantly
+    window.goHome = function () {
+      window.location.href = "../index.html";
+    };
+
+    // Will be overridden by main.js with window.SharedStorage.logout, but define a fallback
+    window.logoutUser = function () {
+      if (window.SharedStorage && window.SharedStorage.logout) {
+        window.SharedStorage.logout();
+      } else {
+        alert("Logging out...");
+        window.location.href = "../login.html";
+      }
+    };
+
+    // ✅ Update dashboard cards with user data
+    async function updateDashboardCards() {
+      // Get user data using SharedStorage
+      const allData = await window.SharedStorage.loadAll();
+
+      // Handle null response (when user is not logged in)
+      if (!allData) {
+        return; // Exit early if no data
+      }
+
+      const expenses = allData.expenses || [];
+      const yields = allData.yields || [];
+
+      // Calculate totals
+      const totalExpenses = expenses.reduce((sum, exp) => sum + (parseFloat(exp.amount) || 0), 0);
+      const totalRevenue = yields.reduce((sum, yld) => sum + (parseFloat(yld.totalRevenue) || 0), 0);
+      const netProfit = totalRevenue - totalExpenses;
+
+      // Update card values - check if elements exist first
+      const totalExpensesEl = document.getElementById("totalExpenses");
+      const totalRevenueEl = document.getElementById("totalRevenue");
+      const netProfitEl = document.getElementById("netProfit");
+      const profitCard = document.getElementById("profitCard");
+      const profitLabel = document.getElementById("profitLabel");
+
+      // Exit if elements don't exist (e.g., page was replaced with Access Denied)
+      if (!totalExpensesEl || !totalRevenueEl || !netProfitEl || !profitCard || !profitLabel) {
+        return;
+      }
+
+      totalExpensesEl.textContent = `₹${totalExpenses.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      totalRevenueEl.textContent = `₹${totalRevenue.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      netProfitEl.textContent = `₹${netProfit.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+      // Update profit card color based on profit/loss
+      if (netProfit >= 0) {
+        profitCard.style.backgroundColor = "#c8e6c9";
+        profitLabel.textContent = "📈 Net Profit";
+        profitLabel.style.color = "#2e7d32";
+      } else {
+        profitCard.style.backgroundColor = "#ffcdd2";
+        profitLabel.textContent = "📉 Net Loss";
+        profitLabel.style.color = "#c62828";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      // Update dashboard cards when page loads
+      // Note: main.js handles session checking and redirection
+      await updateDashboardCards();
+    });
+  </script>
+
+</body>
+
+</html>

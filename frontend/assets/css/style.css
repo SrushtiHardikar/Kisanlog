@@ -1,0 +1,396 @@
+/* 🌿 GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ---------------- LANDING PAGE ---------------- */
+body.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-container {
+  background: #fff;
+  border-radius: 20px;
+  padding: 50px;
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.landing-container h1 {
+  color: #2e7d32;
+  font-size: 2.2em;
+  margin-bottom: 15px;
+}
+
+.landing-container p {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.landing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* ---------------- BUTTONS (Unified) ---------------- */
+.btn,
+.action-btn,
+.add-btn,
+.submit-btn,
+.edit-btn,
+.delete-btn,
+.save-btn,
+.cancel-btn {
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.btn {
+  background: #2e7d32;
+  color: white;
+}
+
+.btn:hover,
+.action-btn:hover,
+.add-btn:hover,
+.submit-btn:hover {
+  background: #1b5e20;
+}
+
+.btn.secondary {
+  background: #64b5f6;
+  color: white;
+}
+.btn.secondary:hover {
+  background: #1976d2;
+}
+
+/* Button color variations */
+.btn-blue,
+.submit-btn.blue,
+.edit-btn {
+  background: #42a5f5;
+  color: white;
+}
+.btn-blue:hover,
+.submit-btn.blue:hover,
+.edit-btn:hover {
+  background: #1976d2;
+}
+
+.btn-green,
+.save-btn {
+  background: #43a047;
+  color: white;
+}
+.btn-green:hover,
+.save-btn:hover {
+  background: #2e7d32;
+}
+
+.btn-red,
+.delete-btn {
+  background: #e53935;
+  color: white;
+}
+.btn-red:hover,
+.delete-btn:hover {
+  background: #b71c1c;
+}
+
+.btn-gray,
+.cancel-btn {
+  background: #757575;
+  color: white;
+}
+.btn-gray:hover,
+.cancel-btn:hover {
+  background: #424242;
+}
+
+/* ---------------- CONTAINER ---------------- */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+
+/* ---------------- HEADER ---------------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.header h1 {
+  color: #2e7d32;
+  font-size: 2em;
+}
+
+.header p {
+  color: #666;
+  margin-top: 4px;
+}
+
+.header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------------- EXPORT BUTTON ---------------- */
+.export-btn {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s;
+}
+
+.export-btn:hover {
+  background: #1b5e20;
+}
+
+/* ---------------- DASHBOARD CARDS ---------------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid;
+}
+
+.stat-card.expenses {
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  border-color: #ef5350;
+}
+
+.stat-card.revenue {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-color: #42a5f5;
+}
+
+.stat-card.profit {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-color: #66bb6a;
+}
+
+.stat-card.profit.negative {
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  border-color: #ef5350;
+}
+
+.stat-label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* ---------------- TABS ---------------- */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 25px;
+}
+
+.tab {
+  padding: 12px 24px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.tab:hover {
+  color: #2e7d32;
+}
+
+.tab.active {
+  color: #2e7d32;
+  border-bottom: 2px solid #2e7d32;
+}
+
+/* ---------------- FORMS ---------------- */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  color: #333;
+  font-size: 1.5em;
+}
+
+.form-container {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border: 2px solid #66bb6a;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.form-input {
+  padding: 10px;
+  border: 1px solid #66bb6a;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.1);
+}
+
+/* ---------------- TABLES ---------------- */
+.table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #c8e6c9;
+}
+
+thead.blue-header {
+  background: #bbdefb;
+}
+
+thead.purple-header {
+  background: #e1bee7;
+}
+
+th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+thead.blue-header th {
+  color: #1565c0;
+}
+
+thead.purple-header th {
+  color: #6a1b9a;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:hover {
+  background: #f5f5f5;
+}
+
+.category-badge {
+  display: inline-block;
+  background: #c8e6c9;
+  color: #2e7d32;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.action-btns {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ---------------- CHARTS ---------------- */
+.chart-section {
+  margin-bottom: 40px;
+}
+
+.chart-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.chart-section canvas {
+  max-height: 400px;
+}
+
+/* ---------------- TEXT UTILITIES ---------------- */
+.text-red { color: #d32f2f; }
+.text-blue { color: #1976d2; }
+.text-green { color: #2e7d32; }
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+  .container { padding: 15px; }
+  .header h1 { font-size: 1.5em; }
+  .form-grid { grid-template-columns: 1fr; }
+  .tabs { overflow-x: auto; }
+  .stat-value { font-size: 22px; }
+}

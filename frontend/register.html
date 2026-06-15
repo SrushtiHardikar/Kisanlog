@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | KisanLog</title>
+  <link rel="shortcut icon" href="./assets/icons8-agriculture-96.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/auth.css">
+
+</head>
+
+<body>
+  <div class="form-container">
+    <form id="register-form">
+      <h2>Farmer Registration</h2>
+
+      <input type="text" id="fullName" placeholder="Full Name" autocomplete="name" required />
+      <input type="email" id="email" placeholder="Email ID" autocomplete="email" required />
+      <input type="tel" id="mobile" placeholder="Mobile Number" autocomplete="tel" required />
+      <input type="text" id="location" placeholder="Location (City/Town)" autocomplete="address-level2" required />
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Create Password" autocomplete="new-password" required />
+        <button type="button" class="toggle-password" data-target="password">
+          <i class="fas fa-eye"></i>
+        </button>
+      </div>
+      <div class="password-container">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" autocomplete="new-password"
+          required />
+        <button type="button" class="toggle-password" data-target="confirmPassword">
+          <i class="fas fa-eye"></i>
+        </button>
+      </div>
+
+      <button type="submit" class="form-button">Register</button>
+
+      <p class="form-link">
+        Already have an account? <a href="login.html">Login</a>
+      </p>
+      <p class="form-link">
+        <a href="index.html">Go to Home</a>
+      </p>
+    </form>
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+</body>
+
+</html>

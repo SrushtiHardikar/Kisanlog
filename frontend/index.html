@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Input Expense Tracker - Manage Your Farm Finances</title>
+    
+    <link rel="shortcut icon" href="./assets/icons8-agriculture-96.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <span>KisanLog</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div id="navAuthButton">
+                    <a href="login.html" class="btn-login">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">
+                    <i class="fas fa-star"></i>
+                    Trusted by 10,000+ Farmers
+                </div>
+                <h1 class="animate-fade-in">Track Every Expense,<br><span class="highlight">Maximize Every
+                        Harvest</span></h1>
+                <p class="hero-subtitle animate-fade-in-delay">Stop losing track of your farm expenses. Monitor inputs,
+                    calculate profits, and grow your farming business with data-driven insights.</p>
+                <div class="hero-buttons animate-slide-up">
+                    <a href="login.html" class="btn-primary">
+                        <span>Get Started Free</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#how-it-works" class="btn-secondary">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Watch Demo</span>
+                    </a>
+                </div>
+                <div class="hero-stats animate-fade-in-up">
+                    <div class="stat">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Active Farmers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="stat-number">₹50Cr+</div>
+                        <div class="stat-label">Expenses Tracked</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="stat-number">25%</div>
+                        <div class="stat-label">Avg. Profit Increase</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="dashboard-mockup">
+                    <div class="mockup-window">
+                        <div class="window-header">
+                            <div class="window-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="mockup-dashboard">
+                            <div class="dashboard-card card-1">
+                                <i class="fas fa-wallet"></i>
+                                <div class="card-content">
+                                    <span>Total Expenses</span>
+                                    <h3>₹2,45,000</h3>
+                                </div>
+                            </div>
+                            <div class="dashboard-card card-2">
+                                <i class="fas fa-chart-pie"></i>
+                                <div class="card-content">
+                                    <span>Net Profit</span>
+                                    <h3>₹3,15,000</h3>
+                                </div>
+                            </div>
+                            <div class="chart-area">
+                                <div class="chart-bars">
+                                    <div class="bar" style="height: 60%"></div>
+                                    <div class="bar" style="height: 80%"></div>
+                                    <div class="bar" style="height: 45%"></div>
+                                    <div class="bar" style="height: 90%"></div>
+                                    <div class="bar" style="height: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">FEATURES</span>
+                <h2 class="section-title">Everything You Need to<br>Manage Farm Finances</h2>
+                <p class="section-subtitle">Powerful tools designed specifically for modern farmers</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon green">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                    </div>
+                    <h3>Daily Expense Tracking</h3>
+                    <p>Log fertilizers, seeds, fuel, and labor costs instantly. Never miss an expense again.</p>
+                    <div class="feature-link">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon yellow">
+                            <i class="fas fa-wheat-awn"></i>
+                        </div>
+                    </div>
+                    <h3>Yield Data Management</h3>
+                    <p>Record harvest data and track crop performance across seasons and fields.</p>
+                    <div class="feature-link">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon blue">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                    </div>
+                    <h3>Auto Profit Calculation</h3>
+                    <p>Instantly see your net profit per crop. Know which crops are most profitable.</p>
+                    <div class="feature-link">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon purple">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                    </div>
+                    <h3>Cost vs Yield Analysis</h3>
+                    <p>Compare expenses against yields to optimize your farming strategy.</p>
+                    <div class="feature-link">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon orange">
+                            <i class="fas fa-chart-area"></i>
+                        </div>
+                    </div>
+                    <h3>Visual Graphs & Charts</h3>
+                    <p>View expense trends over time with beautiful, easy-to-understand graphs.</p>
+                    <div class="feature-link">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon red">
+                            <i class="fas fa-file-export"></i>
+                        </div>
+                    </div>
+                    <h3>Export Reports</h3>
+                    <p>Generate detailed PDF and Excel reports for banks, accountants, or personal records.</p>
+                    <div class="feature-link">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="benefits-content">
+                <div class="benefits-text">
+                    <span class="section-badge">WHY CHOOSE US</span>
+                    <h2>Why Farmers Choose KisanLog</h2>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Save Time & Reduce Errors</h4>
+                            <p>No more notebooks and calculators. Track everything digitally in seconds.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div>
+                            <h4>Make Better Decisions</h4>
+                            <p>Data-driven insights help you choose the right crops and optimize spending.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div>
+                            <h4>Increase Profitability</h4>
+                            <p>Identify cost-saving opportunities and maximize returns on every crop.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Access Anywhere</h4>
+                            <p>Mobile-friendly interface lets you track expenses right from the field.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefits-image">
+                    <div class="phone-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen">
+                                <div class="app-header">
+                                    <i class="fas fa-bars"></i>
+                                    <span>Dashboard</span>
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <div class="expense-cards">
+                                    <div class="expense-card">
+                                        <i class="fas fa-seedling"></i>
+                                        <span>Seeds</span>
+                                        <strong>₹45,000</strong>
+                                    </div>
+                                    <div class="expense-card">
+                                        <i class="fas fa-flask"></i>
+                                        <span>Fertilizers</span>
+                                        <strong>₹80,000</strong>
+                                    </div>
+                                </div>
+                                <div class="mini-chart">
+                                    <div class="chart-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">HOW IT WORKS</span>
+                <h2 class="section-title">Simple, Powerful, Effective</h2>
+                <p class="section-subtitle">Get started in minutes and see results immediately</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Add Your Expenses</h3>
+                    <p>Log daily inputs like seeds, fertilizers, and fuel in just a few taps.</p>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Record Yield Data</h3>
+                    <p>Enter harvest quantities and sales prices for each crop.</p>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>View Insights</h3>
+                    <p>Get instant profit calculations, graphs, and comparison reports.</p>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Optimize & Grow</h3>
+                    <p>Make informed decisions to boost profitability season after season.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">TESTIMONIALS</span>
+                <h2 class="section-title">What Farmers Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"KisanLog helped me increase my profit by 30%. I now know exactly where my money goes!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4>Vedika Patil</h4>
+                            <span>Kolhapur</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"Simple to use, even for someone like me who isn't tech-savvy. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4>Priya Sharma</h4>
+                            <span>Maharashtra</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"The export feature saved me hours when applying for a loan. Everything was organized!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4>Amit Patel</h4>
+                            <span>Pune</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-shapes">
+            <div class="cta-shape cta-shape-1"></div>
+            <div class="cta-shape cta-shape-2"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h2>Ready to Take Control of Your Farm Finances?</h2>
+                <p>Join thousands of farmers who are already tracking smarter and earning more.</p>
+                <a href="login.html" class="btn-primary-large">
+                    <span>Start Tracking Now - It's Free</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>No credit card required</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Free forever plan</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>24/7 support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <span>KisanLog</span>
+                    </div>
+                    <p>Empowering farmers with smart expense tracking and profit optimization tools.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> support@farmtracker.com</li>
+                        <li><i class="fas fa-phone"></i> +91 1800-XXX-XXXX</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Kolhapur, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KisanLog. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/shared.js"></script>
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>
